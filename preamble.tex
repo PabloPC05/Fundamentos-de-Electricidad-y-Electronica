@@ -1,0 +1,38 @@
+
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+\usepackage{graphicx} % Para incluir imágenes
+\usepackage{amsmath} % Para fórmulas matemáticas
+\usepackage{amssymb} % Para símbolos matemáticos
+\usepackage{physics} % Para enlaces
+\usepackage{thmtools} % Para estilos de teoremas
+\usepackage{amsthm} % Para estilos de teoremas
+\usepackage{mdframed} % Para marcos
+\usepackage{xcolor} % Para definir colores
+\usepackage[a4paper, total={6.5in, 9.5in}]{geometry}
+\usepackage{tikz}
+\definecolor{LightRed}{rgb}{1.0, 0.8, 0.8} % Definir el color LightRed
+
+
+\newtheorem{theorem}{Teorema} % Definir contador 'theorem' primero
+\numberwithin{theorem}{subsection} % Numera por subsecciones
+
+
+% Apply styles to the theorem
+\usepackage{mdframed}
+\colorlet{LightGreen}{green!15} % Define un color verde claro
+
+\usepackage{mdframed}
+\colorlet{LightGreen}{green!15} % Define un color verde claro
+
+\newenvironment{proposicion}[1]{%
+    \begin{mdframed}[backgroundcolor=LightGreen, 
+        hidealllines=true, % Oculta los bordes
+        innertopmargin=12pt, innerbottommargin=10pt, % Reduce los márgenes arriba/abajo
+        skipbelow=5pt, skipabove=5pt, % Reduce el espacio fuera de la caja
+        roundcorner=5pt]
+    \textbf{#1}\\% Título en negrita
+    \vspace{0.3em} % Espaciado entre el título y el contenido
+}{%
+    \end{mdframed}
+}
+
