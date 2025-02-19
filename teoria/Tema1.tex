@@ -2,14 +2,170 @@
 \subsection{Carga eléctrica}
 La \textbf{carga eléctrica} es una propiedad de la materia que le permite interactuar con \textbf{campos eléctricos}.\\ Puede ser positiva o negativa y determina como los objetos interactúan entre sí mediante fuerzas eléctricas.
 
-\begin{proposicion}[Principio de atracción y repulsión]
+\begin{teorema}{Principio de atracción y repulsión}
     Las cargas de igual signo se repelen y las cargas de signo contrario se atraen.
-\end{proposicion}
+\end{teorema}
+Por ejemplo, un electrón tiene una carga de $-1.6 \times 10^{-19}$ C y un protón tiene una carga de $1.6 \times 10^{-19}$ C.
 
-La carga es una magnitud cuantificada y su unidad de medida es el \textbf{Coulomb} (C). La carga de un electrón es de $-1.6 \times 10^{-19}$ C y la de un protón es de $1.6 \times 10^{-19}$ C.
+\centering
+% REPELLING CHARGES +q +q
+\def\a{2.5}
+\def\R{0.33}
+\begin{tikzpicture}
+    \def\a{2} % Define the variable \a
+    \coordinate (L) at (-\a,0);
+    \coordinate (R) at (+\a,0);
+    
+    % FORCES
+    \draw[force] (L) ++ (-\R,0) --++ (-\F,0) node[left] {$\mathbf{F}_{21}$};
+    \draw[force] (R) ++ (+\R,0) --++ (+\F,0) node[right] {$\mathbf{F}_{12}$};
+    
+    % POSITION VECTOR
+    \draw[vector] (L) --++ (0.4*\a,0) node[right=-2] {$\vu{r}_{21}$};
+    
+    % CHARGES
+    \draw[charge+] (L) circle (\R) node[scale=1.2] {$+$};
+    \draw[charge+] (R) circle (\R) node[scale=1.2] {$+$};
+    \draw[<->]     (L)++(\R,-1.1*\R) --++ (2*\a-2*\R,0) node[midway,below] {r};
+    \node[above] at (-\a,\R) {$q_1=+q_0$};
+    \node[above] at (+\a,\R) {$q_2=+q_0$};
+    
+\end{tikzpicture}
 
-\begin{proposicion}[Conservación de la carga]
+\begin{tikzpicture}
+    \def\a{2} % Define the variable \a
+    \coordinate (L) at (-\a,0);
+    \coordinate (R) at (+\a,0);
+    
+    % FORCES
+    \draw[force] (L) ++ (-\R,0) --++ (-\F,0) node[left] {$\mathbf{F}_{21}$};
+    \draw[force] (R) ++ (+\R,0) --++ (+\F,0) node[right] {$\mathbf{F}_{12}$};
+    
+    % POSITION VECTOR
+    \draw[vector] (L) --++ (0.4*\a,0) node[right=-2] {$\vu{r}_{21}$};
+    
+    % CHARGES
+    \draw[charge-] (L) circle (\R) node[scale=1.2] {$-$};
+    \draw[charge-] (R) circle (\R) node[scale=1.2] {$-$};
+    \draw[<->]     (L)++(\R,-1.1*\R) --++ (2*\a-2*\R,0) node[midway,below] {r};
+    \node[above] at (-\a,\R) {$q_1=-q_0$};
+    \node[above] at (+\a,\R) {$q_2=-q_0$};
+    
+\end{tikzpicture}
+\\
+% ATTRACTING CHARGES
+\begin{tikzpicture}
+    \def\a{2.5}
+    \coordinate (L) at (-\a,0);
+    \coordinate (R) at (+\a,0);
+      
+    % FORCES
+    \draw[force] (L) --++ (+\F,0) node[above left] {$\mathbf{F}_{21}$};
+    \draw[force] (R) --++ (-\F,0) node[above right] {$\mathbf{F}_{12}$};
+    
+    % CHARGES
+    \draw[charge+] (L) circle (\R) node[scale=1.2] {$+$};
+    \draw[charge-] (R) circle (\R) node[scale=1.2] {$-$};
+    \draw[<->]     (L)++(\R,-1.1*\R) --++ (2*\a-2*\R,0) node[midway,below] {r};
+    \node[above] at (-\a,\R) {$q_1$};
+    \node[above] at (+\a,\R) {$q_2$};
+    
+  \end{tikzpicture}
+
+  \raggedright 
+
+
+\begin{teorema}{Conservación/Propagación de la carga}
     La carga eléctrica no se crea ni se destruye, solo se transforma.
-\end{proposicion}
+\end{teorema}
+
+\noindent
+Una definición alternativa de la \textbf{carga eléctrica} es que es el exceso o defecto de electrones con respecto a los protones. \\
+Por ello, podemos realizar una \underline{clasificación de la materia según la lugadura de los $e^-$ en las últimas capas}
+
+\begin{itemize}
+    \item \textbf{Aislantes}: Los electrones están fuertemente ligados y están fijos en sus últimas capas. 
+    \item \textbf{Conductores}: Los electrones están débilmente ligados y son casi libres.
+    \item \textbf{Semiconductores}: Los electrones están fijos pero bajo determinadas coniciones pueden ser casi-libres.
+\end{itemize}
+Otro tipo un poco menos común es el \textbf{piezoeléctricos}, que son materiales que generan una carga eléctrica al ser sometidos a presión.
+\subsection{Ley de Coulomb}
+La \textbf{Ley de Coulomb} establece que la fuerza entre dos cargas puntuales es directamente proporcional al producto del valor absoluto de las cargas e inversamente proporcional al cuadrado de la distancia que las separa.\\
+Viene dada por la fórmula:
+\begin{equation}
+    \vec{F} = k \frac{|q_1 q_2|}{r^2} \hat{r} = k \frac{q_1 q_2}{r^3} (\vec{r_2} - \vec{r_1}) [N]
+\end{equation}
+Donde: 
+\begin{itemize}
+    \item $q_1, q_2$ son las cargas puntuales. Medidas en Coulombs$[C]$.
+    \item $r$ es la distancia entre las cargas. Medida en metros$[m]$.
+    \item $\hat{r}$ es el vector unitario que apunta de $q_1$ a $q_2$.
+    \item $k$ es la constante de Coulomb. $k = 8.99 \times 10^9 \frac{Nm^2}{C^2}$
+\end{itemize}
+
+\noindent
+La constante de Coulomb se puede expresar en función de la permitividad del vacío $\varepsilon_0$ y la velocidad de la luz en el vacío $c$:
+
+\begin{equation}
+    k = \frac{1}{4\pi \varepsilon_0}
+\end{equation}
+Donde $\varepsilon_0$ es la permitividad en el vacío $\varepsilon_0 = 8.85 \times 10^{-12} \frac{C^2}{Nm^2}$. En el caso de que quisieramos medir la permitividad en otro medio, se puede expresar como $\varepsilon = \varepsilon_0 \varepsilon_r$, donde $\varepsilon_r$ es la permitividad relativa del medio.
+
+
+\begin{teorema}{Principio de superposición}
+    La fuerza total sobre una carga es la suma vectorial de las fuerzas ejercidas por las demás cargas.
+    $$\sum_{i=1}^{n} \vec{F_i} = \vec{F_{total}}$$
+\end{teorema}
+
+\subsection{Campo eléctrico}
+El \textbf{campo eléctrico} es una magnitud vectorial que se define como la fuerza que experimentaría una carga de prueba positiva situada en un punto del espacio.\\
+Al igual que la fuerza, el \uline{campo eléctrico es directamente proporcional a la carga fija en el espacio e inversamente proporcional a la distancia entre ambas cargas.} 
+Viene dada por: 
+\begin{equation}
+    \vec{E} = \frac{\vec{F}}{q_0} = k \frac{q}{r^2} \hat{r} = k \frac{q}{r^3} \vec{r}
+\end{equation}
+Donde las variables son las mismas que en la Ley de Coulomb.\\
+La relación que existe con la fuerza es: 
+\begin{equation}
+    \vec{F} = q_0 \cdot \vec{E} \Rightarrow \vec{E} = \frac{\vec{F}}{q_0}
+\end{equation}
+Además, al igual que la fuerza \uline{el campo eléctrico cumple el principio de superposición}: $$\vec{E_{total}} = \sum_{i=1}^{n} \vec{E_i}$$
+
+\subsection{Líneas de campo eléctrico}
+Las \textbf{líneas de campo eléctrico} son líneas imaginarias que representan la dirección y sentido del campo eléctrico en un punto del espacio.\\
+Las líneas de campo se dibujan hacia fuera si la carga es positiva y se dibujan hacia dentro dsi la carga es negativa, es decir, las líneas de fuerza nacen en las cargas positivas y mueren en las cargas negativas. \\
+La \uline{densidad de líneas de campo es proporcional a las cargas}. Se dibujan de forma simétrica y radial. \\
+
+
+\def\R{1.8}
+\def\NE{8}
+\def\NV{4}
+\begin{center}
+    \begin{minipage}{0.45\textwidth}
+      \centering % Asegura que el TikZ quede centrado dentro de la minipage
+      % POINT CHARGE +1
+      \begin{tikzpicture}
+        \foreach \i [evaluate={\angle=(\i-1)*360/\NE;}] in {1,...,\NE}{
+          \draw[EFieldLineArrow={0.6}] (0,0) -- (\angle:\R);
+        }
+        \draw[charge+] (0,0) circle (10pt) node[black,scale=0.8] {$+q$};
+      \end{tikzpicture}
+    \end{minipage}
+    \hfill % Espacio flexible entre los gráficos
+    \begin{minipage}{0.45\textwidth}
+      \centering
+      % POINT CHARGE -1
+      \begin{tikzpicture}
+        \foreach \i [evaluate={\angle=(\i-1)*360/\NE;}] in {1,...,\NE}{
+          \draw[EFieldLineArrow={0.5}] (\angle:\R) -- (0:0);
+        }
+        \draw[charge-] (0,0) circle (10pt) node[black,scale=0.8] {$-q$};
+      \end{tikzpicture}
+    \end{minipage}
+  \end{center}
+  
+  
+  
+
 
     
