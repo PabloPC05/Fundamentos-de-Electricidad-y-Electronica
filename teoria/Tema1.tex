@@ -177,16 +177,15 @@ Dado que el campo eléctrico es una magnitud vectorial,
 
 
 \subsection{Corriente eléctrica}
-Cuando la corriente eléctrica no es estática entonces las cargas (los electrones) se encuentran en movimiento.\\ 
-Definimos el \textbf{flujo} de forma general como algo que atraviesa una determinada superficie. 
-$\Phi = \int\int_{\text{superficie}}\vec{F}\cdot \mathrm{d}\vec{S}$
-En el caso de la carga, el \textbf{flujo de carga} es la cantidad de carga que atraviesa una superficie en un determinado tiempo. Es decir viene dada por la fórmula $$I = \frac{\text{Carga en superficie}}{\text{Tiempo}}$$
-y la unidad de la corriene es ${I}=\frac{1C}{1S} = 1A$[Amperio].
-Además, observemos que la corriente eléctrica es una magntiud vectorial, por lo que tiene módulo, sentido y dirección.
-\textbf{Convenio}: La corriente eléctrica se define en el sentido de las cargas positivas.\\
-Podemos definir la corriente eléctrica, por ejemplo, en un cable como: 
-$\frac{\Delta Q}{\Delta t} = I$ En el caso de corrientes totalmente continuas tenemos $I = \frac{dQ}{dt}$
-%%Aqui van mas cosas
-\textbf{Modelo microscópico con dirección (Modelo de Drude)}: En un material conductor en el que los electrones están casi libres, se aplica un campo eléctrico externo 
-velocidad limite, terminal, arrastre (cte)
-    
+La \textbf{corriente eléctrica} aparece cuando estamos ante un sistema \underline{no} electroestático. Esto se debe primordialmente a que las cargas (los electrones) se encuentran en continuo movimiento en la superficie. 
+De forma general definimos el \textbf{flujo} como un efecto que pasa o atraviesa a una superficie, matemáticamente se suele representar como $\int\int_{\text{superficie}}\vec{F}\cdot \mathrm{d}\vec{S}$.
+En nuestro caso particular hablamos del \textbf{flujo eléctrico} que es la cantidad de carga que atraviesa una superficie en un determinado tiempo. Es decir, viene dado por la fórmula: $$I = \frac{\text{Carga en superficie}}{\text{Tiempo}}$$
+y la unidad de la corriente es ${I}=\frac{1C}{1S} = 1A$[Amperio].
+Se trata de una \underline{magnitud vectorial}, por lo que cuenta con magnitud, dirección y sentido. \\
+\textbf{Convenio}: La corriente eléctrica se define en el sentido de las cargas positivas, al igual que $\vec{E}$ Esto nos permite deducir, por ejemplo, que en los cables habrá mayor corriente eléctrica donde haya más electrones libres. 
+Debido a que las cargas se encuentran en movimiento se suele hablar de la corriente eléctrica como diferencias, por ejemplo, en un cable como: 
+$\frac{\Delta Q}{\Delta t} = I$ En el caso de corrientes totalmente continuas tenemos $I = \frac{dQ}{dt}$. \\
+\begin{teorema}{Modelo microscópico de conducción eléctrica (Modelo de Drude)}
+    En los metales, los $e^-$ se comportan de forma similar a las moléculas de un gas, es decir, se mueven de forma caótica a grandes velocidades y chocan con los iones del metal, sumado a que se encuentran en equilibrio térmico tenemos que \underline{velocidad media de los electrones es nula} ($\vec{v_{media}}=0)$.\\
+    Cuando aplicamos un campo eléctrico externo $\vec{E}$, los electrones sufren una fuerza de $\vec{F} = -e\vec{E}$, por lo que por la 2º Ley de Newton experimentan una velocidad de desplazamiento, a la que se suele denominar \textbf{velocidad de deriva} $\vec{v_d}$.\\ Este movimiento de electrones genera una corriente eléctrica, pero sigue siendo insicnificante con respecto a la velocidad térmica inicial de los electrones.
+\end{teorema}
