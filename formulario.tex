@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{multicol} % Para manejar múltiples columnas
+\usepackage[a4paper, landscape, margin=1cm]{geometry} % Modo horizontal (landscape)
+
+% Definir entorno para los cuadros con título negro
+\newtcolorbox{teorema}[1]{
+  colback=white,
+  colframe=black,
+  coltitle=white,
+  colbacktitle=black,
+  fonttitle=\bfseries,
+  title={#1},
+  boxrule=1pt,
+  width=\linewidth,
+  arc=2mm
+}
+
+\begin{document}
+
+\begin{center}
+    \LARGE \textbf{Campo eléctrico. Corriente eléctrica}
+\end{center}
+
+\begin{multicols}{3} % Dividimos en TRES columnas
+
+% Primera columna
+\begin{teorema}{Ley de Coulomb}
+    $$\vec{F} = k\frac{|q_1q_2|}{r^2}[N] = k\frac{q_1q_2}{r^2}(\vec{r_1} - \vec{r_2}) [N]$$
+    Cte de Coulomb $k = 8,99 \cdot 10^9 [N\cdot \frac{m^2}{C^2}]$\\
+    Permitividad en el vacío $\epsilon_0 = 8,85 \cdot 10^-12 [\frac{F}{m}]$\\
+    Permitividad en el medio $\epsilon = \epsilon_0\epsilon_r$
+\end{teorema}
+
+\begin{teorema}{Campo eléctrico}
+    $$\vec{E} = k\frac{q_0}{r^2}\vec{r}\quad [\frac{N}{C}]$$
+\end{teorema}
+
+\begin{teorema}{Corriente Eléctrica}
+    $$ I = \frac{Q}{t} \quad [A] = [\frac{1 C}{1 s}]$$
+    Se suele dar en cables o movimientos de carga $\implies$\\
+    $$ I = \frac{\partial{Q}}{\partial{t}} \text{ ó } I = \frac{\Delta{Q}}{\Delta{t}}$$
+\end{teorema}
+
+
+% Segunda columna
+\columnbreak
+
+
+\end{multicols} % Fin de columnas
+
+\end{document}
