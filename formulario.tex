@@ -53,6 +53,18 @@
     \end{itemize}
 \end{teorema}
 
+\begin{teorema}{Corriente en función de la densidad de carga}
+    $$I = q \, n \, v_d \, S$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $I$: Corriente [$A$]
+        \item $q$: Carga de las partículas (densidad de partículas) [$C$]
+        \item $n$: Densidad de partículas [$1/m^3$]
+        \item $v_d$: Velocidad de deriva [$m/s$]
+        \item $S$: Área de la sección transversal [$m^2$]
+    \end{itemize}
+\end{teorema}
+
 \begin{teorema}{Potencial eléctrico}
     $$V = k\frac{q}{r} \quad [V]$$
     $$\vec{E} = -\nabla V$$
@@ -178,8 +190,20 @@
     \end{itemize}
 \end{teorema}
 
+\begin{teorema}{Relación entre resistividad y conductividad}
+    $$\rho = \frac{1}{\sigma} \quad \text{y} \quad \sigma = n \, q \, \mu$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $\rho$: Resistividad [$\Omega \cdot m$]
+        \item $\sigma$: Conductividad [$S/m$]
+        \item $n$: Densidad de partículas cargadas [$1/m^3$]
+        \item $q$: Carga de las partículas [$C$]
+        \item $\mu$: Movilidad de las partículas cargadas [$m^2/V \cdot s$]
+    \end{itemize}
+\end{teorema}
+
 \begin{teorema}{Potencia eléctrica}
-    $$P = VI = I^2R = \frac{V^2}{R}$$
+    $$P = I V = I^2 R = \frac{V^2}{R}$$
     Variables y Unidades:
     \begin{itemize}
         \item $P$: Potencia [$W$]
@@ -315,6 +339,125 @@
         \item $U$: Energía [$J$]
         \item $L$: Inductancia [$H$]
         \item $I$: Corriente [$A$]
+    \end{itemize}
+\end{teorema}
+
+\end{multicols}
+
+% ======================= TERCERA PÁGINA ========================
+\newpage
+
+\begin{center}
+    \LARGE \textbf{Ondas}
+\end{center}
+
+\begin{multicols}{3}
+
+% Primera columna
+\begin{teorema}{Relación energía y frecuencia}
+    $$E = h \nu$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $E$: Energía [$J$]
+        \item $h$: Constante de Planck [$6.626 \times 10^{-34} \, J \cdot s$]
+        \item $\nu$: Frecuencia [$Hz$]
+    \end{itemize}
+\end{teorema}
+
+\begin{teorema}{Relación velocidad, frecuencia y longitud de onda}
+    $$c = f \lambda$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $c$: Velocidad de la onda [$m/s$]
+        \item $f$: Frecuencia [$Hz$]
+        \item $\lambda$: Longitud de onda [$m$]
+    \end{itemize}
+\end{teorema}
+
+\begin{teorema}{Función de onda}
+    $$y(x,t) = A \sin(kx - \omega t + \phi)$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $y(x,t)$: Desplazamiento [$m$]
+        \item $A$: Amplitud [$m$]
+        \item $k$: Número de onda [$rad/m$]
+        \item $\omega$: Frecuencia angular [$rad/s$]
+        \item $\phi$: Fase inicial [$rad$]
+    \end{itemize}
+\end{teorema}
+
+\end{multicols}
+
+% ======================= NUEVO APARTADO: CIRCUITOS ========================
+\newpage
+
+\begin{center}
+    \LARGE \textbf{Circuitos Eléctricos}
+\end{center}
+
+\begin{multicols}{3}
+
+% Primera columna
+\begin{teorema}{Ley de Ohm}
+    $$V = I R$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $V$: Voltaje [$V$]
+        \item $I$: Corriente [$A$]
+        \item $R$: Resistencia [$\Omega$]
+    \end{itemize}
+\end{teorema}
+
+\begin{teorema}{Potencia eléctrica}
+    $$P = I V = I^2 R = \frac{V^2}{R}$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $P$: Potencia [$W$]
+        \item $V$: Voltaje [$V$]
+        \item $I$: Corriente [$A$]
+        \item $R$: Resistencia [$\Omega$]
+    \end{itemize}
+\end{teorema}
+
+% Segunda columna
+\columnbreak
+
+\begin{teorema}{Ley de Kirchhoff de Corrientes (LKC)}
+    $$\sum I_{\text{entrante}} = \sum I_{\text{saliente}}$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $I$: Corriente [$A$]
+    \end{itemize}
+\end{teorema}
+
+\begin{teorema}{Ley de Kirchhoff de Tensiones (LKT)}
+    $$\sum V = 0$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $V$: Voltaje [$V$]
+    \end{itemize}
+\end{teorema}
+
+% Tercera columna
+\columnbreak
+
+\begin{teorema}{Asociación de resistencias}
+    Serie: $$R_{\text{eq}} = \sum_i R_i$$
+    Paralelo: $$\frac{1}{R_{\text{eq}}} = \sum_i \frac{1}{R_i}$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $R_{\text{eq}}$: Resistencia equivalente [$\Omega$]
+        \item $R_i$: Resistencias individuales [$\Omega$]
+    \end{itemize}
+\end{teorema}
+
+\begin{teorema}{Energía almacenada en un condensador}
+    $$U = \frac{1}{2} C V^2$$
+    Variables y Unidades:
+    \begin{itemize}
+        \item $U$: Energía [$J$]
+        \item $C$: Capacidad [$F$]
+        \item $V$: Voltaje [$V$]
     \end{itemize}
 \end{teorema}
 
