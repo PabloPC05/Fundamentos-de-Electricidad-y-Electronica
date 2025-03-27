@@ -1,73 +1,40 @@
-\usepackage[utf8]{inputenc} % Codificación UTF-8
-\usepackage{graphicx} % Para incluir imágenes
 \usepackage{amsmath} % Para fórmulas matemáticas
 \usepackage{amssymb} % Para símbolos matemáticos
-\usepackage{physics} % Para operadores matemáticos
-\usepackage{amsthm} % Debe ir antes de thmtools
-\usepackage{thmtools} % Para estilos de teoremas
-\usepackage{mdframed} % Para marcos
 \usepackage{xcolor} % Para definir colores
-\usepackage[a4paper, total={6.5in, 9.5in}]{geometry}
+\usepackage[a4paper, margin=2cm]{geometry} % Ajuste de márgenes
 \usepackage{tcolorbox} % Para cajas de colores
-\usepackage{ulem} % Para subrayados
 \usepackage{enumitem} % Para listas
-\usepackage{hyperref} % Para enla
 \usepackage{tikz} % Para crear gráficos
 \tikzset{>=latex} % for LaTeX arrow head
-%\usepackage{xcolor}
-%\colorlet{force}{orange!80!black}
-    \tikzstyle{charge}=[thin,top color=red!50,bottom color=red!70,shading angle=20]
-    \tikzstyle{charge+}=[thin,top color=red!50,bottom color=red!90!black,shading angle=20]
-    \tikzstyle{charge-}=[thin,top color=blue!50,bottom color=blue!80,shading angle=20]
-    \tikzstyle{force}=[->,very thick,orange!80!black]
-    \tikzstyle{vector}=[->,very thick,green!45!black]
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Versión más reciente de pgfplots (cámbialo a 1.13 si tienes problemas)
+\usetikzlibrary{decorations.markings,intersections,calc,angles} % Librerías de TikZ
+\usepackage{multicol} % Para columnas múltiples
+\usepackage{pdflscape} % Para páginas en orientación horizontal
 
-    \def\F{1.8}\colorlet{LightGreen}{green!15} % Define un color verde claro
-    \tikzset{>=latex} % for LaTeX arrow head
-    \usepackage{pgfplots}
-    \pgfplotsset{compat=1.13}
-    \usetikzlibrary{decorations.markings,intersections,calc}
-    \usepackage[outline]{contour} % glow around text
-    \usetikzlibrary{angles,quotes} % for pic (angle labels)
-    \colorlet{Ecol}{orange!90!black}
-    \colorlet{EcolFL}{orange!80!black}
-    \colorlet{Bcol}{blue!90!black}
-    \tikzstyle{EcolEP}=[blue!80!white]
-    \colorlet{veccol}{green!45!black}
-    \tikzset{EFieldLineArrow/.style={EcolFL,decoration={markings,mark=at position #1 with {\arrow{latex}}},
-                                    postaction={decorate}},
-            EFieldLineArrow/.default=0.5}
- 
+% Definir entorno para los cuadros con título negro
+\newtcolorbox{teorema}[1]{
+  colback=white,
+  colframe=black,
+  coltitle=white,
+  colbacktitle=black,
+  fonttitle=\bfseries,
+  title={#1},
+  boxrule=1pt,
+  width=\linewidth,
+  arc=2mm
+}
 
-\iffalse
-\declaretheoremstyle[
-    headfont  =\bfseries, % Ponemos el título en negrita
-    notefont = \bfseries, 
-    notebraces={}{},
-    bodyfont=\normalfont,
-    headpunct={},
-    postheadspace =\newline, % Espacio tras el título
-    headformat={\noindent #1\par}, % Alinea el título a la izquierda y salta de línea
-    mdframed ={
-        backgroundcolor=LightGreen, % Color de fondo
-        hidealllines=true,          % Ocultar bordes
-        innertopmargin=10pt, innerbottommargin=10pt, 
-        innerleftmargin=10pt, innerrightmargin=10pt,
-        roundcorner=5pt             % Bordes redondeados
-    }
-] {caja_verde}
+\colorlet{Ecol}{orange!90!black}
+\colorlet{Bcol}{blue!90!black}
+\colorlet{veccol}{green!45!black}
 
-\declaretheorem[
-    style = caja_verde, 
-    name = {}, 
-    numbered = no
-    ]
-{proposicion}
-\fi
+\linespread{1.1} % Interlineado
 
+\newenvironment{problem}[2][Ejercicio]{%
+  \noindent\textbf{#1 #2.}%
+}{\par}
 
-% Definir un nuevo entorno para teoremas con un cuadro rojo claro
-\newtcolorbox{teorema}[1]{colback=red!10!white, colframe=red!80!black, 
-  title={\textbf{#1}}, fonttitle=\bfseries, after={\noindent\vspace{5pt}}}
-
-  \linespread{1.1} % Interlineado
+\newenvironment{sol}{%
+  \vspace{0.5em}\noindent\textit{Solución:}%
+}{\hfill $\square$} % Se usa $\square$ en lugar de \qed por si no se usa amsthm
